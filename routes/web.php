@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeacherController;
 
 Route::get('test', function () {
     return view('test');
@@ -41,3 +42,11 @@ Route::get('/update/{ID}/{choose}/{updated}','StaticController@update');
 Route::apiResource('/login','LoginController')->middleware(\App\Http\Middleware\CrossHttp::class);;
 Route::apiResource('/findpsw','PassforgotController')->middleware(\App\Http\Middleware\CrossHttp::class);;
 Route::apiResource('/systemlog','SystemlogController')->middleware(\App\Http\Middleware\CrossHttp::class);;
+
+Route::get('foo', function () {
+    return "Hello World";
+});
+
+Route::get('/', function () {
+    return view('welcome');
+});
